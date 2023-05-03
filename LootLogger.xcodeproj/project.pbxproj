@@ -62,13 +62,13 @@
 			children = (
 				26F6A80529F3E19100B3F314 /* AppDelegate.swift */,
 				26F6A80729F3E19100B3F314 /* SceneDelegate.swift */,
-				26F6A80B29F3E19100B3F314 /* Main.storyboard */,
 				26E3914829F6D4F500A69F61 /* Item.swift */,
-				26F6A80E29F3E19200B3F314 /* Assets.xcassets */,
-				26F6A81029F3E19200B3F314 /* LaunchScreen.storyboard */,
-				26F6A81329F3E19200B3F314 /* Info.plist */,
 				26F6A81929F3E19800B3F314 /* ItemsViewController.swift */,
 				26E3914A29F7508B00A69F61 /* ItemStore.swift */,
+				26F6A80E29F3E19200B3F314 /* Assets.xcassets */,
+				26F6A80B29F3E19100B3F314 /* Main.storyboard */,
+				26F6A81029F3E19200B3F314 /* LaunchScreen.storyboard */,
+				26F6A81329F3E19200B3F314 /* Info.plist */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";

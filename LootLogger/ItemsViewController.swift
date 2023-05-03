@@ -28,6 +28,14 @@ class ItemsViewController: UITableViewController {
     }
 
     @IBAction func addNewItem(_ sender: UIButton) {
+        // Figure out where that item is in the array
+        let newItem = itemStore.createItem()
+        if let idx = itemStore.allItems.firstIndex(of: newItem) {
+            let indexPath = IndexPath(row: idx, section: 0)
+
+            // Insert this new row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
