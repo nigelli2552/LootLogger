@@ -40,7 +40,7 @@ class Item: Equatable {
 
     static func == (lhs: Item, rhs: Item) -> Bool {
         return lhs.name == rhs.name
-        && lhs.serialNumber == rhs.serialNumber
-        && lhs.dateCreated == rhs.dateCreated
+            && lhs.serialNumber == rhs.serialNumber
+            && lhs.dateCreated == rhs.dateCreated
     }
 }
