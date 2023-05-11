@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +55,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-RE-OBy">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-RE-OBy">
                                             <rect key="frame" x="36" y="19" width="42" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
@@ -74,6 +75,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="uvc-ZY-A1x" firstAttribute="trailing" secondItem="RWg-RE-OBy" secondAttribute="trailing" id="049-fB-wmF"/>
                                         <constraint firstItem="uvc-ZY-A1x" firstAttribute="leading" secondItem="RWg-RE-OBy" secondAttribute="leading" id="2Ty-pt-2Rh"/>
                                         <constraint firstItem="uvc-ZY-A1x" firstAttribute="top" secondItem="RWg-RE-OBy" secondAttribute="bottom" constant="8" id="D6H-vb-pbT"/>
                                         <constraint firstItem="6xe-ok-sgc" firstAttribute="centerY" secondItem="cDK-jU-R7n" secondAttribute="centerY" id="HQd-qc-wtC"/>
@@ -81,6 +83,7 @@
                                         <constraint firstItem="RWg-RE-OBy" firstAttribute="top" secondItem="cDK-jU-R7n" secondAttribute="topMargin" constant="8" id="bO1-pE-CIc"/>
                                         <constraint firstAttribute="bottom" secondItem="uvc-ZY-A1x" secondAttribute="bottom" constant="8" id="iKR-Mw-YqW"/>
                                         <constraint firstItem="RWg-RE-OBy" firstAttribute="leading" secondItem="cDK-jU-R7n" secondAttribute="leadingMargin" constant="16" id="ism-ok-L88"/>
+                                        <constraint firstItem="6xe-ok-sgc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RWg-RE-OBy" secondAttribute="trailing" constant="16" id="xaI-yR-ngF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
