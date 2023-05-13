@@ -184,12 +184,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="juv-uJ-ujm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="juv-uJ-ujm" firstAttribute="bottom" secondItem="chP-qU-VWq" secondAttribute="bottom" constant="8" id="6Vp-WM-Sin"/>
                             <constraint firstItem="chP-qU-VWq" firstAttribute="leading" secondItem="juv-uJ-ujm" secondAttribute="leading" constant="16" id="V1R-fO-RKw"/>
                             <constraint firstItem="chP-qU-VWq" firstAttribute="top" secondItem="juv-uJ-ujm" secondAttribute="top" constant="8" id="WO5-Ql-LdM"/>
                             <constraint firstItem="juv-uJ-ujm" firstAttribute="trailing" secondItem="chP-qU-VWq" secondAttribute="trailing" constant="16" id="Z2W-PW-2k7"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dPI-QG-esh" appends="YES" id="bCK-wu-c35"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="eTl-Tm-Gs4"/>
                     <connections>
@@ -200,6 +204,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbY-6L-sfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dPI-QG-esh">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="98t-ec-Pgk" id="az7-mf-Rjq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1234.3511450381679" y="-32.394366197183103"/>
         </scene>
