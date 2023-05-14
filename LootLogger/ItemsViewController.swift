@@ -11,23 +11,12 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
 
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        if isEditing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
-
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        } else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", for: .normal)
-
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UITabBarItem) {
         // Figure out where that item is in the array
         let newItem = itemStore.createItem()
         if let idx = itemStore.allItems.firstIndex(of: newItem) {
@@ -43,7 +32,7 @@ class ItemsViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 65
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
