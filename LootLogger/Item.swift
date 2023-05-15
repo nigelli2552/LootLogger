@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Item: Equatable {
+class Item: Equatable, Codable {
     var name: String
     var serialNumber: String?
     var valueInDollars: Int
