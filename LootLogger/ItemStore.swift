@@ -16,12 +16,6 @@ class ItemStore {
         return newItem
     }
 
-//    init() {
-//        for _ in 0 ..< 5 {
-//            createItem()
-//        }
-//    }
-
     func removeItem(_ item: Item) {
         if let index = allItems.firstIndex(of: item) {
             allItems.remove(at: index)
@@ -41,5 +35,11 @@ class ItemStore {
 
         // Insert item in array at new location
         allItems.insert(moveItem, at: toIndex)
+    }
+
+    func saveChanges() -> Bool {
+        let encoder = PropertyListEncoder()
+        let data = encoder.encode(allItems)
+        return false
     }
 }
