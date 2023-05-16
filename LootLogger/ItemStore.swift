@@ -10,6 +10,13 @@ import UIKit
 
 class ItemStore {
     var allItems = [Item]()
+
+    let itemArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirecotry = documentsDirectories.first!
+        return documentDirecotry.appendingPathComponent("items.plist")
+    }()
+
     @discardableResult func createItem() -> Item {
         let newItem = Item(random: true)
         allItems.append(newItem)
