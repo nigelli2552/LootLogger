@@ -17,6 +17,11 @@ class ItemStore {
         return documentDirecotry.appendingPathComponent("items.plist")
     }()
 
+    init() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(saveChanges), name: UIScene.didEnterBackgroundNotification, object: nil)
+    }
+
     @discardableResult func createItem() -> Item {
         let newItem = Item(random: true)
         allItems.append(newItem)
@@ -44,7 +49,7 @@ class ItemStore {
         allItems.insert(moveItem, at: toIndex)
     }
 
-    func saveChanges() -> Bool {
+    @objc func saveChanges() -> Bool {
         do {
             let encoder = PropertyListEncoder()
             let data = try encoder.encode(allItems)
