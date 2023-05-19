@@ -15,6 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         print(#function)
+
+        // Get a reference to the application bundle
+        let mainBundle = Bundle.main
+
+        // Ask for the URL to a resource name MyTextFile.txt in the bundle resources
+        if let url = mainBundle.path(forResource: "MyTextFile", ofType: "txt") {
+            // Do something with URL
+            print(url)
+        }
+
         guard let _ = (scene as? UIWindowScene) else { return }
 
         // Create an ItemStore
