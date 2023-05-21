@@ -20,10 +20,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         alertController.modalPresentationStyle = .popover
         alertController.popoverPresentationController?.barButtonItem = sender
 
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-            let imagePicker = self.imagePicker(for: .camera)
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+                let imagePicker = self.imagePicker(for: .camera)
+            }
+            alertController.addAction(cameraAction)
         }
-        alertController.addAction(cameraAction)
 
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
             let imageController = self.imagePicker(for: .photoLibrary)
