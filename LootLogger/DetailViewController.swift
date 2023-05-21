@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
 
     @IBAction func choosePhotoSource(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -20,12 +21,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         alertController.popoverPresentationController?.barButtonItem = sender
 
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-            print("Present camera")
+            let imagePicker = self.imagePicker(for: .camera)
         }
         alertController.addAction(cameraAction)
 
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
-            print("Present photo library")
+            let imageController = self.imagePicker(for: .photoLibrary)
         }
         alertController.addAction(photoLibraryAction)
 
@@ -88,5 +89,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+
+    func imagePicker(for sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        return imagePicker
     }
 }

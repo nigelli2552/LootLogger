@@ -91,7 +91,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="chP-qU-VWq">
                                 <rect key="frame" x="16" y="111" width="361" height="650"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-cC-5po">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-cC-5po" userLabel="Name Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY3-6v-NPM">
@@ -110,7 +110,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EzU-DW-grm">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EzU-DW-grm" userLabel="Serial Stack View">
                                         <rect key="frame" x="0.0" y="42" width="361" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnS-mh-jMy">
@@ -129,7 +129,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="14t-0w-aRt">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="14t-0w-aRt" userLabel="Value Stack View">
                                         <rect key="frame" x="0.0" y="84" width="361" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ux-dX-36I">
@@ -149,11 +149,14 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDL-M6-IgK">
-                                        <rect key="frame" x="0.0" y="126" width="361" height="524"/>
+                                        <rect key="frame" x="0.0" y="125.99999999999999" width="361" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="rIJ-8N-pDy">
+                                        <rect key="frame" x="0.0" y="154.33333333333329" width="361" height="495.66666666666674"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-Kd-xWH">
@@ -186,6 +189,7 @@
                     <navigationItem key="navigationItem" id="eTl-Tm-Gs4"/>
                     <connections>
                         <outlet property="dateLabel" destination="yDL-M6-IgK" id="9qa-4I-DKI"/>
+                        <outlet property="imageView" destination="rIJ-8N-pDy" id="DeV-yE-7SN"/>
                         <outlet property="nameField" destination="df3-Wg-LBz" id="Siw-dO-ptb"/>
                         <outlet property="serialNumberField" destination="qXH-U6-wo6" id="HK9-0S-7W3"/>
                         <outlet property="valueField" destination="Ofe-f2-oIt" id="QcE-yh-ymh"/>
