@@ -15,38 +15,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
 
-    @IBAction func choosePhotoSource(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alertController.modalPresentationStyle = .popover
-        alertController.popoverPresentationController?.barButtonItem = sender
-
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
-                let imagePicker = self.imagePicker(for: .camera)
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            alertController.addAction(cameraAction)
-        }
-
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
-            let imagePicker = self.imagePicker(for: .photoLibrary)
-            imagePicker.modalPresentationStyle = .popover
-            imagePicker.popoverPresentationController?.barButtonItem = sender
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        alertController.addAction(photoLibraryAction)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alertController.addAction(cancelAction)
-
-        present(alertController, animated: true, completion: nil)
-    }
-
     var item: Item! {
         didSet {
             navigationItem.title = item.name
         }
     }
+
+    var imageStore: ImageStore!
 
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -113,5 +88,32 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
         // Take image picker off the screen - you must call this dismiss method
         dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func choosePhotoSource(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.modalPresentationStyle = .popover
+        alertController.popoverPresentationController?.barButtonItem = sender
+
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+                let imagePicker = self.imagePicker(for: .camera)
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            alertController.addAction(cameraAction)
+        }
+
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { _ in
+            let imagePicker = self.imagePicker(for: .photoLibrary)
+            imagePicker.modalPresentationStyle = .popover
+            imagePicker.popoverPresentationController?.barButtonItem = sender
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        alertController.addAction(photoLibraryAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 }
