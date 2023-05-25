@@ -13,8 +13,8 @@ class ItemStore {
 
     let itemArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentDirecotry = documentsDirectories.first!
-        return documentDirecotry.appendingPathComponent("items.plist")
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.plist")
     }()
 
     init() {
