@@ -12,22 +12,13 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     var imageStore: ImageStore!
 
+    // MARK: - Initializers
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem
     }
 
-    @IBAction func addNewItem(_ sender: UITabBarItem) {
-        // Figure out where that item is in the array
-        let newItem = itemStore.createItem()
-        if let idx = itemStore.allItems.firstIndex(of: newItem) {
-            let indexPath = IndexPath(row: idx, section: 0)
-
-            // Insert this new row into the table
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }
-    }
-
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
@@ -39,6 +30,19 @@ class ItemsViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    // MARK: - Actions
+    @IBAction func addNewItem(_ sender: UITabBarItem) {
+        // Figure out where that item is in the array
+        let newItem = itemStore.createItem()
+        if let idx = itemStore.allItems.firstIndex(of: newItem) {
+            let indexPath = IndexPath(row: idx, section: 0)
+
+            // Insert this new row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+    }
+
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
