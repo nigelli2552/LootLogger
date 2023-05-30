@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -112,6 +113,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EzU-DW-grm" userLabel="Serial Stack View">
                                                 <rect key="frame" x="0.0" y="42" width="374" height="34"/>
@@ -131,6 +133,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="14t-0w-aRt" userLabel="Value Stack View">
                                                 <rect key="frame" x="0.0" y="84" width="374" height="34"/>
@@ -150,6 +153,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDL-M6-IgK">
                                                 <rect key="frame" x="0.0" y="125.99999999999999" width="374" height="20.333333333333329"/>
@@ -177,7 +181,7 @@
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="juv-uJ-ujm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Primary Brand Fill Color"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="u3r-JO-Hqa" secondAttribute="trailing" constant="8" id="34D-JR-FIr"/>
@@ -218,6 +222,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zQV-ZD-0k2">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Secondary Brand Fill Color"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -229,9 +234,22 @@
             <point key="canvasLocation" x="-399.23664122137404" y="-32.394366197183103"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="Brand Accent Color"/>
     <resources>
+        <namedColor name="Brand Accent Color">
+            <color red="0.94117647058823528" green="0.30980392156862746" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary Brand Fill Color">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary Brand Fill Color">
+            <color red="0.92549019607843142" green="0.92156862745098034" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemFillColor">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
